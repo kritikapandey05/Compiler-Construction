@@ -1,0 +1,14 @@
+/* Group Number: 7
+Hamsini G - 2023A7PS0006P
+Neha Gujjari - 2023A7PS0011P
+Kushi Arun Kumar - 2023A7PS0546P
+Kritika Pandey - 2023A7PS0022P
+Laavanya Datta - 2023A7PS0536P*/
+
+===== SYNTAX ERRORS =====
+
+Line 2 	Error: The token TK_LIST for lexeme list  does not match with the expected token TK_PARAMETER
+Line 4 	Error: The token TK_ID for lexeme c4d5  does not match with the expected token TK_COLON
+Line 5 	Error: The token TK_ASSIGNOP for lexeme <---  does not match with the expected token TK_COLON
+Line 7 	Error: Invalid token TK_WHILE encountered with value while  stack top expPrime
+Line 9 	Error: Invalid token TK_END encountered with value end  stack top otherStmts

@@ -1,0 +1,22 @@
+% Testcase 5 : Lexically correct, syntactically incorrect
+
+_addNums input list [int b3, int c4b5]
+output parameter list [int c4d5];
+	type int c4d5;
+	type int <--- b3;
+	c4d5 <--- b3 + c4b5
+	while (b3 > 0)
+		b3 <--- b3 - 1;
+	end
+	return [c4d5];
+end
+
+_main
+	type int : b3;
+	type int : c4b5;
+	b3 <--- 3;
+	c4b5 <--- 5;
+	[c4d5] <--- call _addNums with parameters [b3, c4b5];
+	write(c4d5);
+	return;
+end

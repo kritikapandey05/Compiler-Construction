@@ -1,0 +1,38 @@
+% Testcase 3 : Lexically incorrect, syntactically incorrect
+
+_main
+type int : b2 ;
+b2 <--- 5 ;
+
+type int : b2 ;
+type int : c3 ;
+b2 <--- 5 ;1
+c3 <--- 3 ;
+
+call _1abc with parameters [b2] ;
+call _1 with parameters [b2] ;
+
+while(b2 <- c3)
+write(b2) ;
+endwhile
+
+b2 <--- b2 + 1 ;
+
+
+record #Finance
+type int : value ;
+type real : rate ;
+endrecord
+
+record #1abc
+type int : tag ;
+type real : val ;
+endrecord
+
+record # valid
+type int : x ;
+type real : y ;
+endrecord
+
+end
+type record #

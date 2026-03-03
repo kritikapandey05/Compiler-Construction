@@ -1,0 +1,148 @@
+# Rule 1
+<program> ===> <otherFunctions> <mainFunction>
+# Rule 2
+<mainFunction> ===> TK_MAIN <stmts> TK_END
+# Rule 3
+<otherFunctions> ===> <function> <otherFunctions>
+<otherFunctions> ===> epsilon
+# Rule 4
+<function> ===> TK_FUNID <input_par> <output_par> TK_SEM <stmts> TK_END
+# Rule 5
+<input_par> ===> TK_INPUT TK_PARAMETER TK_LIST TK_SQL <parameter_list> TK_SQR
+# Rule 6
+<output_par> ===> TK_OUTPUT TK_PARAMETER TK_LIST TK_SQL <parameter_list> TK_SQR
+<output_par> ===> epsilon
+# Rule 7
+<parameter_list> ===> <dataType> TK_ID <remaining_list>
+# Rule 8
+<dataType> ===> <primitiveDatatype>
+<dataType> ===> <constructedDatatype>
+# Rule 9
+<primitiveDatatype> ===> TK_INT
+<primitiveDatatype> ===> TK_REAL
+# Rule 10
+<constructedDatatype> ===> TK_RECORD TK_RUID
+<constructedDatatype> ===> TK_UNION TK_RUID
+<constructedDatatype> ===> TK_RUID
+# Rule 11
+<remaining_list> ===> TK_COMMA <parameter_list>
+<remaining_list> ===> epsilon
+# Rule 12
+<stmts> ===> <typeDefinitions> <declarations> <otherStmts> <returnStmt>
+# Rule 13
+<typeDefinitions> ===> <actualOrRedefined> <typeDefinitions>
+<typeDefinitions> ===> epsilon
+# Rule 14
+<actualOrRedefined> ===> <typeDefinition>
+<actualOrRedefined> ===> <definetypestmt>
+# Rule 15
+<typeDefinition> ===> TK_RECORD TK_RUID <fieldDefinitions> TK_ENDRECORD
+# Rule 16
+<typeDefinition> ===> TK_UNION TK_RUID <fieldDefinitions> TK_ENDUNION
+# Rule 17
+<fieldDefinitions> ===> <fieldDefinition> <fieldDefinition> <moreFields>
+# Rule 18
+<fieldDefinition> ===> TK_TYPE <fieldType> TK_COLON TK_FIELDID TK_SEM
+# Rule 19
+<fieldType> ===> <primitiveDatatype>
+<fieldType> ===> <constructedDatatype>
+# Rule 20
+<moreFields> ===> <fieldDefinition> <moreFields>
+<moreFields> ===> epsilon
+# Rule 21
+<declarations> ===> <declaration> <declarations>
+<declarations> ===> epsilon
+# Rule 22
+<declaration> ===> TK_TYPE <dataType> TK_COLON TK_ID <global_or_not> TK_SEM
+# Rule 23
+<global_or_not> ===> TK_COLON TK_GLOBAL
+<global_or_not> ===> epsilon
+# Rule 24
+<otherStmts> ===> <stmt> <otherStmts>
+<otherStmts> ===> epsilon
+# Rule 25
+<stmt> ===> <assignmentStmt>
+<stmt> ===> <iterativeStmt>
+<stmt> ===> <conditionalStmt>
+<stmt> ===> <ioStmt>
+<stmt> ===> <funCallStmt>
+# Rule 26
+<assignmentStmt> ===> <singleOrRecId> TK_ASSIGNOP <arithmeticExpression> TK_SEM
+# Rule 27
+<singleOrRecId> ===> TK_ID <option_single_constructed>
+# Rule 28
+<option_single_constructed> ===> epsilon
+<option_single_constructed> ===> <oneExpansion> <moreExpansion>
+# Rule 29
+<oneExpansion> ===> TK_DOT TK_FIELDID
+# Rule 30
+<moreExpansion> ===> <oneExpansion> <moreExpansion>
+<moreExpansion> ===> epsilon
+# Rule 31
+<funCallStmt> ===> <outputParameters> TK_CALL TK_FUNID TK_WITH TK_PARAMETERS <inputParameters> TK_SEM
+# Rule 32
+<outputParameters> ===> TK_SQL <idList> TK_SQR TK_ASSIGNOP
+<outputParameters> ===> epsilon
+# Rule 33
+<inputParameters> ===> TK_SQL <idList> TK_SQR
+# Rule 34
+<iterativeStmt> ===> TK_WHILE TK_OP <booleanExpression> TK_CL <stmt> <otherStmts> TK_ENDWHILE
+# Rule 35
+<conditionalStmt> ===> TK_IF TK_OP <booleanExpression> TK_CL TK_THEN <stmt> <otherStmts> <elsePart>
+# Rule 36
+<elsePart> ===> TK_ELSE <stmt> <otherStmts> TK_ENDIF
+<elsePart> ===> TK_ENDIF
+# Rule 37
+<ioStmt> ===> TK_READ TK_OP <var> TK_CL TK_SEM
+<ioStmt> ===> TK_WRITE TK_OP <var> TK_CL TK_SEM
+# Rule 38
+<arithmeticExpression> ===> <term> <expPrime>
+# Rule 39
+<expPrime> ===> <lowPrecedenceOperators> <term> <expPrime>
+<expPrime> ===> epsilon
+# Rule 40
+<term> ===> <factor> <termPrime>
+# Rule 41
+<termPrime> ===> <highPrecedenceOperators> <factor> <termPrime>
+<termPrime> ===> epsilon
+# Rule 42
+<factor> ===> TK_OP <arithmeticExpression> TK_CL
+<factor> ===> <var>
+# Rule 43
+<highPrecedenceOperators> ===> TK_MUL
+<highPrecedenceOperators> ===> TK_DIV
+# Rule 44
+<lowPrecedenceOperators> ===> TK_PLUS
+<lowPrecedenceOperators> ===> TK_MINUS
+# Rule 45
+<booleanExpression> ===> TK_OP <booleanExpression> TK_CL <logicalOp> TK_OP <booleanExpression> TK_CL
+<booleanExpression> ===> <var> <relationalOp> <var>
+<booleanExpression> ===> TK_NOT TK_OP <booleanExpression> TK_CL
+# Rule 46
+<var> ===> <singleOrRecId>
+<var> ===> TK_NUM
+<var> ===> TK_RNUM
+# Rule 47
+<logicalOp> ===> TK_AND
+<logicalOp> ===> TK_OR
+# Rule 48
+<relationalOp> ===> TK_LT
+<relationalOp> ===> TK_LE
+<relationalOp> ===> TK_EQ
+<relationalOp> ===> TK_GE
+<relationalOp> ===> TK_NE
+<relationalOp> ===> TK_GT
+# Rule 51
+<returnStmt> ===> TK_RETURN <optionalReturn> TK_SEM
+# Rule 52
+<optionalReturn> ===> TK_SQL <idList> TK_SQR
+<optionalReturn> ===> epsilon
+# Rule 53
+<idList> ===> TK_ID <more_ids>
+# Rule 54
+<more_ids> ===> TK_COMMA <idList>
+<more_ids> ===> epsilon
+# Rule 55  (left-factored on TK_DEFINETYPE to eliminate LL(1) conflict)
+<definetypestmt> ===> TK_DEFINETYPE <A> TK_RUID TK_AS TK_RUID
+<A> ===> TK_RECORD 
+<A> ===> TK_UNION

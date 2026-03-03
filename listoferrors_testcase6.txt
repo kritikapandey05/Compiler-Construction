@@ -1,0 +1,11 @@
+/* Group Number: 7
+Hamsini G - 2023A7PS0006P
+Neha Gujjari - 2023A7PS0011P
+Kushi Arun Kumar - 2023A7PS0546P
+Kritika Pandey - 2023A7PS0022P
+Laavanya Datta - 2023A7PS0536P*/
+
+===== SYNTAX ERRORS =====
+
+Line 8 	Error: Invalid token TK_RETURN encountered with value return  stack top otherStmts
+Line 9 	Error: The token TK_IF for lexeme if  does not match with the expected token TK_END

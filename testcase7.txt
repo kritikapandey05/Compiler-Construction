@@ -1,0 +1,27 @@
+% Testcase 7 : Lexically incorrect, syntactically incorrect
+
+_calcStats input parameter list [int b3, int c4b5]
+output parameter list [real c4d5];
+	record #info
+		type int : count;
+	endrecord
+	definetype record #info as
+	type real : c4d5;
+	b3 <--- c4b5 ! 0;
+	call _helper parameters [b3];
+	return [c4d5];
+end
+
+_main
+	type int : b3;
+	type int : c4b5;
+	b3 <--- 5;
+	c4b5 = 3;
+	while (write)
+		b3 <--- b3 - 1;
+	endwhile
+	_ b3;
+	write(b3);
+	return;
+end
+write(b3);

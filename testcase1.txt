@@ -1,0 +1,16 @@
+% Testcase 1 : Lexically incorrect, syntactically incorrect
+
+_main
+	type int : b3;
+	type real : c4b5;
+	b3 <--- 5;
+	c4b5 <--- 3.5;
+	b3 <-- 2;
+	c4b5 <--- 1.2345;
+	b3 <--- b3 && c4b5;
+	b3 <--- b3 @ c4b5;
+	b3 <--- $ + 3;
+	type int : d2bbbbbbbbbbbbbbbbbbb3;
+	type int : _computeThisFunctionValueRightNowExceedingLimit3;
+	return;
+end

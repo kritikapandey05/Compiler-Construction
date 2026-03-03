@@ -1,0 +1,52 @@
+/* Group Number: 7
+Hamsini G - 2023A7PS0006P
+Neha Gujjari - 2023A7PS0011P
+Kushi Arun Kumar - 2023A7PS0546P
+Kritika Pandey - 2023A7PS0022P
+Laavanya Datta - 2023A7PS0536P*/
+
+===== LEXICAL ERRORS =====
+
+Line 10	Lexeme !	Message: Expected '!=' for not-equal operator
+Line 19	Lexeme =	Message: Expected '==' for equality operator
+Line 23	Lexeme _	Message: TK_FUNID must have at least one letter after '_'
+
+===== SYNTAX ERRORS =====
+
+Line 7	Error: The token TK_ENDRECORD for lexeme endrecord  does not match with the expected token TK_TYPE
+	Cause: record #info has only 1 field definition; grammar requires at least 2
+	       (fieldDefinitions -> fieldDefinition fieldDefinition moreFields)
+
+Line 9	Error: The token TK_TYPE for lexeme type  does not match with the expected token TK_RUID
+	Cause: definetypestmt on line 8 is missing the final #RUID after 'as'
+	       Parser expected a TK_RUID but found TK_TYPE (start of next declaration)
+
+Line 10	Error: The token TK_NUM for lexeme 0  does not match with the expected token TK_SEM
+	Cause: Cascade from lexical error '!' on same line
+	       '!' is stripped from token stream; parser sees "b3 <--- c4b5 0 ;"
+	       After parsing c4b5 as the full expression, TK_SEM is expected but TK_NUM(0) is found
+
+Line 11	Error: The token TK_PARAMETERS for lexeme parameters  does not match with the expected token TK_WITH
+	Cause: call statement missing the 'with' keyword
+	       "call _helper parameters [b3]" should be "call _helper with parameters [b3]"
+
+Line 19	Error: The token TK_NUM for lexeme 3  does not match with the expected token TK_ASSIGNOP
+	Cause: Cascade from lexical error '=' on same line
+	       '=' is stripped from token stream; parser sees "c4b5 3 ;"
+	       After parsing c4b5 as singleOrRecId, TK_ASSIGNOP is expected but TK_NUM(3) is found
+
+Line 20	Error: Invalid token TK_WRITE encountered with value write  stack top booleanExpression
+	Cause: 'write' is not a valid start of a boolean expression
+	       FIRST(booleanExpression) = {TK_OP, TK_ID, TK_NUM, TK_RNUM, TK_NOT}
+	       Parser uses panic recovery, skips TK_WRITE, syncs on TK_CL
+
+Line 23	Error: The token TK_SEM for lexeme ;  does not match with the expected token TK_ASSIGNOP
+	Cause: Cascade from lexical error '_' on same line
+	       '_' is stripped from token stream; parser sees "b3 ;"
+	       After parsing b3 as singleOrRecId, TK_ASSIGNOP expected but TK_SEM found
+
+Line 27	Error: The token TK_WRITE for lexeme write  does not match with the expected token TK_EOF
+	Cause: STACK EMPTY BEFORE EOF
+	       Program is complete after 'end' on line 26. Stack only has TK_EOF sentinel.
+	       But tokens remain (write, (, b3, ), ;). Parser reports mismatch on TK_EOF vs TK_WRITE,
+	       then pops TK_EOF sentinel and exits. Remaining tokens are silently discarded.

@@ -1,0 +1,19 @@
+/* Group Number: 7
+Hamsini G - 2023A7PS0006P
+Neha Gujjari - 2023A7PS0011P
+Kushi Arun Kumar - 2023A7PS0546P
+Kritika Pandey - 2023A7PS0022P
+Laavanya Datta - 2023A7PS0536P*/
+
+% ============================================================
+%  LEXICAL ERRORS
+% Line    Lexeme                                                  Message
+% ----------------------------------------------------
+% 8       3.5                                                     Expected second digit after decimal point in real number
+% 9       <--                                                     Expected '-' to complete assignment operator <---
+% 11      &&                                                      Expected '&&&' for AND operator
+% 12      @                                                       Expected '@@@' for OR operator
+% 13      $                                                       Unknown character
+% 14      d2bbbbbbbbbbbbbbbbbbb3                                  TK_ID exceeds maximum length of 20 characters
+% 15      _computeThisFunctionValueRightNowExceedingLimit3        TK_FUNID exceeds maximum length of 30 characters
+% ============================================================

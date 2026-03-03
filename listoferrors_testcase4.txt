@@ -1,0 +1,8 @@
+/* Group Number: 7
+Hamsini G - 2023A7PS0006P
+Neha Gujjari - 2023A7PS0011P
+Kushi Arun Kumar - 2023A7PS0546P
+Kritika Pandey - 2023A7PS0022P
+Laavanya Datta - 2023A7PS0536P*/
+
+No errors. Program is syntactically correct.

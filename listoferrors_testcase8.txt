@@ -1,0 +1,18 @@
+/* Group Number: 7
+Hamsini G - 2023A7PS0006P
+Neha Gujjari - 2023A7PS0011P
+Kushi Arun Kumar - 2023A7PS0546P
+Kritika Pandey - 2023A7PS0022P
+Laavanya Datta - 2023A7PS0536P*/
+
+% ============================================================
+SYNTAX ERRORS 
+% ============================================================
+% Line    Code     Lexeme      Message
+% ------------------------------------------------------------
+Line 10   SYN-2    *           Invalid token TK_MUL encountered with value * — blank parse table entry for <factor>/<var>; expected expression before operator. Panic recovery fires, * skipped.
+Line 17   SYN-3    end         Invalid token TK_END encountered with value end — lookahead in FOLLOW set of <returnStmt>. Empty function body: grammar rule for <returnStmt> has no epsilon production; 'return ;' is required.
+Line 30   SYN-5    b5          Invalid token TK_ID encountered with value b5 — stack empty before EOF. Extra token after valid program end (end on line 27).
+Line 31   SYN-5    end         Invalid token TK_END encountered with value end — stack empty before EOF. Duplicate/stray 'end' after program has completed.
+Line 32   SYN-5    _badExpr    Invalid token TK_FUNID encountered with value _badExpr — stack empty before EOF. Stray function identifier after program has completed.
+% ============================================================

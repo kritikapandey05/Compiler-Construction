@@ -1,0 +1,20 @@
+/* Group Number: 7
+Hamsini G - 2023A7PS0006P
+Neha Gujjari - 2023A7PS0011P
+Kushi Arun Kumar - 2023A7PS0546P
+Kritika Pandey - 2023A7PS0022P
+Laavanya Datta - 2023A7PS0536P*/
+
+% ============================================================
+%  LEXICAL ERRORS
+% Line    Lexeme    Message
+% ----------------------------------------------------
+% 10      _         TK_FUNID must have at least one letter after '_'
+% 11      _         TK_FUNID must have at least one letter after '_'
+% 13      <-        Expected '-' to complete assignment operator <---
+% 20      #         Expected lowercase letter after '#' in record union identifier
+% 20      F         Unknown character
+% 25      #         Expected lowercase letter after '#' in record union identifier
+% 30      #         Expected lowercase letter after '#' in record union identifier
+% 36      #         Unexpected end of file in token
+% ============================================================

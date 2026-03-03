@@ -1,0 +1,16 @@
+% Testcase 4 : Lexically correct, syntactically correct
+
+_doubleVal input parameter list [int b3]
+output parameter list [int c4b5];
+	c4b5 <--- b3 + b3;
+	return [c4b5];
+end
+
+_main
+	type int : b3;
+	type int : c4b5;
+	b3 <--- 7;
+	[c4b5] <--- call _doubleVal with parameters [b3];
+	write(c4b5);
+	return;
+end

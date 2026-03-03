@@ -1,0 +1,19 @@
+/* Group Number: 7
+Hamsini G - 2023A7PS0006P
+Neha Gujjari - 2023A7PS0011P
+Kushi Arun Kumar - 2023A7PS0546P
+Kritika Pandey - 2023A7PS0022P
+Laavanya Datta - 2023A7PS0536P*/
+
+% ============================================================
+%  LEXICAL ERRORS
+% Line    Lexeme                  Message
+% ----------------------------------------------------
+% 8       #                       Expected lowercase letter after '#' in record union identifier
+% 8       P                       Unknown character
+% 12      |                       Unknown character
+% 13      3.5                     Expected second digit after decimal point in real number
+% 14      3.57E+2                 Expected two digits in exponent of real number
+% 15      3.57E1                  Expected two digits in exponent of real number
+% 16      3.                      Expected digit after decimal point in real number
+% ============================================================

@@ -1,0 +1,17 @@
+% Testcase 2 : Lexically incorrect, syntactically incorrect
+
+_main
+	type int : b3;
+	type real : c4b5;
+	type #Point : b3b4;
+	type #validone : c3b4;
+	b3 <--- 3.57;
+	c4b5 <--- 5.77;
+	b3 <--- b3 | c3b4;
+	b3 <--- 3.5;
+	b3 <--- 3.57E+2;
+	c4b5 <--- 3.57E1;
+	b3 <--- 3.;
+	write(b3);
+	return;
+end
